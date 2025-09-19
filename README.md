@@ -1,6 +1,8 @@
-![Alt text](images/recipe1.png)
-![Alt text](images/recipe2.png)
-![Alt text](images/recipe3.png)
+![Alt text](recipe1.png)
+
+![Alt text](recipe2.png)
+
+![Alt text](recipe3.png)
 
 
 # My Django Recipe meal
