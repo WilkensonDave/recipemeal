@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% if  user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% if user.is_authenticated %}
+    <h2 class="username-greet">Hi {{user.username}},</h2>
+    {% endif %}
+    <section>
+        
+        <div class="container">
+            <p>Enter your recipe information below.</p>
+            <div>
+                <form action="{% url 'home'%}"method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn" type="submit">Add Data</button>
+                </form>
+            </div>
+            {% if recipes %}
+            <div>
+                <form  method="POST">
+                    {% csrf_token %}
+                    <button class="button generate-pdf"><a href="{% url 'recipe' %}">Generate Plan</a></button>
+                </form>
+            </div>
+            {% endif %}
+            {% if not user.is_authenticated%}
+            <h2>You need to login in order to create and submit recipes.</h2>
+            {% endif %}
+
+            {% if user.is_authenticated and not recipes%}
+                <h2>You have not created any recipe yet. Try now!</h2>
+            {% endif %}
+            {% if recipes and user.is_authenticated %}
+            <table class="table">
+                <tr>
+                    <th>Day-Time</th>
+                    <th>Recipe Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+                {% for item in recipes %}
+                <tr>
+                    <td>{{item.date}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.content}}</td>
+                    <td><a href="{% url 'update-data' item.id %}">Update</a>/<a href="{% url 'deletedata' item.id %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>

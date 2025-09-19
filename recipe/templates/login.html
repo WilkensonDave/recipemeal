@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="register-container">
+            <h1>Login</h1>
+            <form action="{% url 'login' %}?next={{request.get.next}}" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div>
+                    <label for="password1">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <input type="hidden" name="next" value="{{ next }}">
+                <button class="btn-login">Login</button>
+            </form>
+
+            <div class="account-confirm">
+                <div>
+                    <h2>Don't have an account?</h2>
+                    <span><a href="{% url 'register' %}">Register</a></span>
+                </div>
+                
+                <div>
+                    <h2>Forget password?</h2>
+                    <span><a href="{% url 'forgetpassword' %}">Reset Password</a></span>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>

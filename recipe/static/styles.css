@@ -1,0 +1,253 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.password-strength{
+    margin-top: 20px;
+    height: 20px;
+    width: 80%;
+    background-color: #003049;
+    
+}
+
+.inner-password{
+    width: 1%;
+    height: 100%;
+    background-color: #c1121f;
+    color: #fff;
+    text-align: center;
+}
+
+.register-container{
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #14213d;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.register-container form div{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 18px;
+}
+
+
+.btn-register{
+    padding: 6px 12px;
+    background-color: #fca311;
+    color: #14213d;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-register:active, 
+.btn-register:hover{
+    background-color: #ccc;
+}
+
+.message{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px; */
+    text-align: center;
+}
+.message p{
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.message h3{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.account-confirm{
+    margin-top: 20px;
+}
+
+.account-confirm span a{
+    text-decoration: none;
+    font-size: 22px;
+    color: #fca311;
+    cursor: pointer;
+}
+
+.password-strength{
+    margin-bottom: 20px;
+}
+
+/*
+LOGIN
+*/
+
+.btn-login{
+    padding: 8px 16px;
+    background-color: #fca311;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+.account-confirm{
+    margin-bottom: 15px;
+}
+
+.account-confirm div{
+    padding: 10px;
+}
+
+/* INDEX.HTML PAGE*/
+
+header{
+    width: 100%;
+    background-color: #003049;
+    color: #fff;
+}
+
+header nav{
+    max-width: 1200px;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    justify-content: l;
+    padding: 10px 15px;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li a{
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    
+}
+
+.username-greet{
+    color: #fca311;
+    text-align: center;
+    margin: 20px;
+}
+.container{
+    margin: 40px auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 600pxs;
+}
+
+form label{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+form input{
+    padding: 10px;
+}
+
+form{
+    padding: 10px;
+}
+
+.container p:first-child{
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn{
+    padding: 8px 18px;
+    background-color: #003049;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+}
+
+.table{
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #003049;
+    color: #fff;
+    border: 2px solid;
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+.table, th, td{
+    border: 1px solid #fca311;
+}
+
+.table th{
+    padding: 10px;
+    color: #fca311;
+}
+
+
+.table td{
+    width: 250px;
+    padding: 10px;
+}
+
+.table td a{
+    text-decoration: none;
+    color: #219ebc;
+}
+
+.generate-pdf, .btn{
+    padding: 8px 16px;
+    background-color: #003049;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+}
+
+.generate-pdf a{
+    color: #fff;
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
+}
+
+
+.reset form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.resetpassword-btn{
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fca311;
+    border: none;
+    color: #fff;
+}

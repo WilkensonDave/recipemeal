@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="recipe-container">
+                <h1>Recipe Meal Planner for {{user.username}}</h1>
+                {% if recipes %}
+                <table class="table">
+                    <tr>
+                        <th>Day-Time</th>
+                        <th>Recipe Name</th>
+                        <th>Description</th>
+                    </tr>
+                    {% for item in recipes %}
+                    <tr>
+                        <td>{{item.date}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.content}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+            
+            {% if recipes %}
+                <button class="btn" onclick="generatePDF()">Generate PDF</button>
+            {% endif %}
+        </div>
+        
+    </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF() { 
+        let element = document.querySelector(".recipe-container");
+        html2pdf(element);
+    }
+    </script>
+</body>
+</html>
